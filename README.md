@@ -9,8 +9,9 @@ Shared **Cursor** and **Claude Code** skills for multiple repositories. Each ski
 | **`git-commit`** | Stage changes, write commit messages, create **local** commits |
 | **`git-push`** | Push commits to `origin`, set upstream, sync a branch (no PR authoring) |
 | **`git-pr`** | Create/list/view **pull requests** (e.g. `gh pr create`), title/body confirmation |
+| **`log-adr`** | Capture major technical decisions from chat; interactive **APPROVE/ALTER/SKIP/OTHER**; write `docs/adr/NNNN-title.md` and update `docs/adr/index.md` |
 
-**Routing:** Point agents (or a Cursor rule) so “commit / stage / message” loads **`git-commit`**, “push / publish branch” loads **`git-push`**, “open a PR / review request” loads **`git-pr`**.
+**Routing:** Point agents (or a Cursor rule) so “commit / stage / message” loads **`git-commit`**, “push / publish branch” loads **`git-push`**, “open a PR / review request” loads **`git-pr`**, “ADR / decision log / record architecture decision” loads **`log-adr`**.
 
 ## Layout (this repository)
 
@@ -22,6 +23,10 @@ git-push/
   SKILL.md
 git-pr/
   SKILL.md
+log-adr/
+  SKILL.md
+  templates/
+    adr-template.md
 ```
 
 Add more skills by adding sibling folders with their own `SKILL.md` and YAML frontmatter (`name`, `description`).
